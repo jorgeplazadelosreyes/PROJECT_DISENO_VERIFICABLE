@@ -1,0 +1,43 @@
+﻿@model Registration
+
+<form method="post">
+    <div class="border p-3 mt-4">
+        <div class="row pb-2">
+            <h2 class="text-primary">Crear registro</h2>
+            <hr />
+        </div>
+        <div class="mb-3">
+            <label asp-for="Cne">CNE</label>
+            <input asp-for="Cne" class="form-control" />
+        </div>
+        <div class="mb-3">
+            <label asp-for="Commune">Comuna</label>
+            <input asp-for="Commune" class="form-control" />
+        </div>
+        <div class="mb-3">
+            <label asp-for="Block">Manzana</label>
+            <input asp-for="Block" class="form-control" />
+        </div>
+        <div class="mb-3">
+            <label asp-for="Property">Predio</label>
+            <input asp-for="Property" class="form-control" />
+        </div>
+        <div class="mb-3">
+            <label asp-for="Sheets">Fojas</label>
+            <input asp-for="Sheets" class="form-control" />
+        </div>
+        <div class="mb-3">
+            <label asp-for="InscriptionDate">Fecha de inscripción</label>
+            <input asp-for="InscriptionDate" class="form-control" />
+        </div>
+        <div class="mb-3">
+            <label asp-for="InscriptionNumber">Numero de inscripción</label>
+            <input asp-for="InscriptionNumber" class="form-control" />
+        </div>
+        <button type="submit" class="btn btn-primary" style="width:150px">Enviar</button>
+        <a asp-controller="Registration" asp-action="Index" class="btn btn-secondary" style="width:150px">
+            Volver
+        </a>
+    </div>
+</form>
+

@@ -1,0 +1,56 @@
+﻿@model IEnumerable<Registration>
+@{
+    ViewData["Title"] = "Index";
+}
+
+<div class="container p-3">
+    <div class="row pt-4">
+        <div class="col-6">
+            <h2 class="text-primary">Lista de registros</h2>
+        </div>
+        <div class="col-6 text-end">
+            <a asp-controller="Registration" asp-action="Create" class="btn btn-primary">
+                Crear registro
+            </a>
+        </div>
+    </div>
+</div>
+
+<table class="table table-bordered table-striped" style="width:100%">
+    <thead>
+        <tr>
+            <th>Comuna</th>
+            <th>Manzana</th>
+            <th>Predio</th>
+            <th>RUT propietario</th>
+            <th>Fojas</th>
+            <th>Año inscripción</th>
+        </tr>
+    </thead>
+    <tbody>
+        @foreach(var obj in Model)
+        {
+            <tr>
+                <td>
+                    @obj.Commune
+                </td>
+                <td>
+                    @obj.Block
+                </td>
+                <td>
+                    @obj.Property
+                </td>
+                <td>
+                    @obj.Cne
+                </td>
+                <td>
+                    @obj.Sheets
+                </td>
+                <td>
+                    @obj.InscriptionDate
+                </td>
+            </tr>
+        }
+    </tbody>
+</table>
+
