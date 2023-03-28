@@ -25,6 +25,9 @@
             <th>RUT propietario</th>
             <th>Fojas</th>
             <th>Año inscripción</th>
+            <th>Número inscripción</th>
+            <th>Fecha inscripción</th>
+            <th></th>
             <th></th>
         </tr>
     </thead>
@@ -49,6 +52,17 @@
                 </td>
                 <td>
                     @obj.InscriptionDate
+                </td>
+                <td>
+                    @obj.InscriptionNumber
+                </td>
+                <td>
+                    @obj.InscriptionDate
+                </td>
+                <td>
+                    <div class="w-75 btn-group" role="group">
+                        <a asp-controller="Registration" asp-action="Details" asp-route-id="@obj.Id">Detalles</a>
+                    </div>
                 </td>
                 <td>
                     <div class="w-75 btn-group" role="group">

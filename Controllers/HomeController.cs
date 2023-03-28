@@ -15,7 +15,7 @@ namespace PROJECT1.Controllers
 
         public IActionResult Index()
         {
-            return View();
+            return RedirectToAction("Index", "Registration");
         }
 
         public IActionResult Privacy()

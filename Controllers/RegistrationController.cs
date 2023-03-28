@@ -20,6 +20,22 @@ namespace PROJECT1.Controllers
         }
 
         //GET
+        public IActionResult Details(int? id)
+        {
+            if (id == null || id == 0)
+            {
+                return NotFound();
+            }
+
+            var registrationFromDb = _db.Registrations.Find(id);
+            if (registrationFromDb == null)
+            {
+                return NotFound();
+            }
+            return View(registrationFromDb);
+        }
+
+        //GET
         public IActionResult Create()
         {
             return View();
