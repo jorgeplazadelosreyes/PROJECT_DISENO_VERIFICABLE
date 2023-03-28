@@ -30,9 +30,42 @@ namespace PROJECT1.Controllers
         [ValidateAntiForgeryToken]
         public IActionResult Create(Registration obj)
         {
-            _db.Registrations.Add(obj);
-            _db.SaveChanges();
-            return RedirectToAction("Index");
+            if (ModelState.IsValid) { 
+                _db.Registrations.Add(obj);
+                _db.SaveChanges();
+                return RedirectToAction("Index");
+            }
+            return View(obj);
+        }
+
+        //GET
+        public IActionResult Edit(int? id)
+        {
+            if (id == null || id == 0)
+            {
+                return NotFound();
+            }
+
+            var registrationFromDb = _db.Registrations.Find(id);
+            if (registrationFromDb == null)
+            {
+                return NotFound();
+            }
+            return View(registrationFromDb);
+        }
+
+        //POST
+        [HttpPost]
+        [ValidateAntiForgeryToken]
+        public IActionResult Edit(Registration obj)
+        {
+            if (ModelState.IsValid)
+            {
+                _db.Registrations.Update(obj);
+                _db.SaveChanges();
+                return RedirectToAction("Index");
+            }
+            return View(obj);
         }
     }
 }
